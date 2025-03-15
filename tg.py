@@ -6,8 +6,11 @@ from telegram.ext import Application, CommandHandler, CallbackQueryHandler, Call
 from concurrent.futures import ThreadPoolExecutor
 import re
 
-TOKEN = "7381197645:AAGFKi2HE4yIemBYGmiPCuRHmHT13BfJTQY"
+from dotenv import load_dotenv
+import os
 
+load_dotenv()  # Завантажує .env файл
+TOKEN = os.getenv("TOKEN")
 # Джерела обмінників
 EXCHANGE_SOURCES = {
     "kantor_live": "https://kantor.live/kantory/lublin/{}",
